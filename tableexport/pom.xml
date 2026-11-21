@@ -12,11 +12,11 @@
     <artifactId>tableexport-for-vaadin</artifactId>
     <packaging>jar</packaging>
     <version>1.8.0</version>
-    <name>TableExport</name>
+    <name>TableExport for Vaadin 8 and Flow</name>
 
     <organization>
-        <name>Vaadin Community</name>
-        <url>http://vaadin.com/forum/</url>
+        <name>infraLeap</name>
+        <url>https://infraleap.com</url>
     </organization>
 
     <properties>
