@@ -3,6 +3,17 @@
 TableExport is a Data Component add-on for Vaadin 8.
 Legacy versions of the add-on that worked with Vaadin 7 (< 1.8.0) and Vaadin 6 (< 1.3.0) should still be available on the Vaadin.com site.
 
+## About this fork
+
+This is the version 1.8.0 that a fork by Rijad Zuzo ([Tebra/tableexport-for-vaadin](https://github.com/Tebra/tableexport-for-vaadin),
+July 2018) built on top of the last release of [jnash67/tableexport-for-vaadin](https://github.com/jnash67/tableexport-for-vaadin),
+published here unchanged under the Maven coordinates `com.infraleap:tableexport-for-vaadin:1.8.0`; the Java package
+stays `com.vaadin.addon.tableexport`. Compared to the original it exports the presented value when a column has a
+presentation provider, formats `LocalDate` and `LocalDateTime` cells, aligns cells by their presented value and handles
+`null` cell values and columns without an id.
+
+Version 2.0.0 is a port of this version to Vaadin Flow (branch `master`).
+
 ## Overview
 * Exporting data to Excel or CSV formats is a common task that comes up time and again. The solution can figured out from various forum posts but it takes a while to put everything together, especially the writing of the Excel file to the browser.
 * This add-on takes a Grid or Table as input and exports a decent Excel file containing the data in the Container. It also handles HierarchicalDataProviders / HierarchicalContainers and the resulting Excel file will have the categories and subcategories properly grouped/outlined.

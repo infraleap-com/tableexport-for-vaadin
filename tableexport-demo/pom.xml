@@ -7,7 +7,7 @@
     Build with mvn install.  Run with mvn jetty:run
     -->
 
-    <groupId>com.vaadin.addon</groupId>
+    <groupId>com.infraleap</groupId>
     <artifactId>tableexport-for-vaadin-demo</artifactId>
     <packaging>war</packaging>
     <version>1.8.0</version>
@@ -77,7 +77,7 @@
             <scope>provided</scope>
         </dependency>
         <dependency>
-            <groupId>com.vaadin.addon</groupId>
+            <groupId>com.infraleap</groupId>
             <artifactId>tableexport-for-vaadin</artifactId>
             <version>${tableexport.version}</version>
         </dependency>
