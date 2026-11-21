@@ -12,7 +12,7 @@ of its bugs. Version 2.0.0 ports 1.8.0 to Vaadin Flow, its behaviour and bugs in
 three bugs. From 1.8.1 on the Java package is `com.infraleap.tableexport`; Maven coordinates
 `org.vaadin.addons.infraleap:tableexport-for-vaadin`.
 
-## Usage (2.0.0)
+## Usage (2.0.x)
 
 A Flow column does not give out the value provider it was created with, so the columns to export are made exportable
 with their value provider and what they present; every column needs a key:
@@ -28,6 +28,13 @@ new ExcelExport(grid, "Persons", "Staff", "persons.xls", true).export();
 
 `export()` writes the file and sends it to the browser as an attachment (a `DownloadHandler` registered in the session,
 removed after the download); `convertTable()` alone builds the workbook (`getWorkbook()`) without sending it.
+
+## Changes in 2.0.1
+
+* The type of a cell is the class of the value it shows (2.0.0: the class of the value provider, so numbers were
+  written as text with the default style).
+* The totals row works for grids (2.0.0 ended in a ClassCastException and summed nothing).
+* A `java.util.Date` cell keeps its date (2.0.0 overwrote it with its text).
 
 ## Changes from 1.8.0
 
