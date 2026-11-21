@@ -1,9 +1,9 @@
-package com.vaadin.addon.tableexport.v7;
+package com.infraleap.tableexport.v7;
 
 import com.vaadin.v7.ui.Table;
 
 @Deprecated
-public class CsvExport extends com.vaadin.addon.tableexport.CsvExport {
+public class CsvExport extends com.infraleap.tableexport.CsvExport {
 
     public CsvExport(final Table table) {
         super(new DefaultTableHolder(table));

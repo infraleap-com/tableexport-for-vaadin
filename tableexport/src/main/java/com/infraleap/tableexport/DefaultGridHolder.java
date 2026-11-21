@@ -1,4 +1,4 @@
-package com.vaadin.addon.tableexport;
+package com.infraleap.tableexport;
 
 import java.lang.reflect.Field;
 import java.util.Collection;

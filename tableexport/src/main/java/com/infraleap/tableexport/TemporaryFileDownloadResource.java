@@ -1,4 +1,4 @@
-package com.vaadin.addon.tableexport;
+package com.infraleap.tableexport;
 
 import com.vaadin.server.DownloadStream;
 import com.vaadin.server.StreamResource;

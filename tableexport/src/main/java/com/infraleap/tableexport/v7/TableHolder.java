@@ -1,4 +1,4 @@
-package com.vaadin.addon.tableexport.v7;
+package com.infraleap.tableexport.v7;
 
 import java.util.Collection;
 import java.util.Collections;
@@ -8,7 +8,7 @@ import com.vaadin.v7.data.Property;
 import com.vaadin.v7.data.util.ObjectProperty;
 
 @Deprecated
-public interface TableHolder extends com.vaadin.addon.tableexport.TableHolder {
+public interface TableHolder extends com.infraleap.tableexport.TableHolder {
 
     Property getPropertyForGeneratedColumn(final Object propId, final Object rootItemId) throws IllegalArgumentException;
 

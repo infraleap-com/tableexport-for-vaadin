@@ -1,4 +1,4 @@
-package com.vaadin.addon.tableexport.demo;
+package com.infraleap.tableexport.demo;
 
 import java.io.Serializable;
 import java.net.URL;
@@ -14,15 +14,15 @@ import javax.servlet.annotation.WebServlet;
 
 import org.apache.commons.io.FilenameUtils;
 
-import com.vaadin.addon.tableexport.CsvExport;
-import com.vaadin.addon.tableexport.DefaultGridHolder;
-import com.vaadin.addon.tableexport.ExcelExport;
-import com.vaadin.addon.tableexport.TableExport;
-import com.vaadin.addon.tableexport.TableHolder;
-import com.vaadin.addon.tableexport.v7.CsvExportUsingJavaCsv;
-import com.vaadin.addon.tableexport.v7.DefaultTableHolder;
-import com.vaadin.addon.tableexport.v7.ExportableColumnGenerator;
-import com.vaadin.addon.tableexport.v7.PropertyFormatTable;
+import com.infraleap.tableexport.CsvExport;
+import com.infraleap.tableexport.DefaultGridHolder;
+import com.infraleap.tableexport.ExcelExport;
+import com.infraleap.tableexport.TableExport;
+import com.infraleap.tableexport.TableHolder;
+import com.infraleap.tableexport.v7.CsvExportUsingJavaCsv;
+import com.infraleap.tableexport.v7.DefaultTableHolder;
+import com.infraleap.tableexport.v7.ExportableColumnGenerator;
+import com.infraleap.tableexport.v7.PropertyFormatTable;
 import com.vaadin.annotations.Theme;
 import com.vaadin.annotations.VaadinServletConfiguration;
 import com.vaadin.annotations.Widgetset;
@@ -55,7 +55,7 @@ import com.vaadin.v7.ui.Label;
 import com.vaadin.v7.ui.Table;
 
 @Theme("tableexport-theme")
-@Widgetset("com.vaadin.addon.tableexport.demo.TableExportWidgetset")
+@Widgetset("com.infraleap.tableexport.demo.TableExportWidgetset")
 public class TableExportUI extends UI {
 
     private static final long serialVersionUID = -5436901535719211794L;

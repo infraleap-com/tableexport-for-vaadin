@@ -1,8 +1,8 @@
-package com.vaadin.addon.tableexport.demo;
+package com.infraleap.tableexport.demo;
 
-import com.vaadin.addon.tableexport.ExcelExport;
-import com.vaadin.addon.tableexport.TableHolder;
-import com.vaadin.addon.tableexport.v7.DefaultTableHolder;
+import com.infraleap.tableexport.ExcelExport;
+import com.infraleap.tableexport.TableHolder;
+import com.infraleap.tableexport.v7.DefaultTableHolder;
 import com.vaadin.v7.ui.Table;
 import org.apache.poi.hssf.usermodel.HSSFFont;
 import org.apache.poi.hssf.util.HSSFColor;

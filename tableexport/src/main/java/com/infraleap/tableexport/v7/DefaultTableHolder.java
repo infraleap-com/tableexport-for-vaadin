@@ -1,4 +1,4 @@
-package com.vaadin.addon.tableexport.v7;
+package com.infraleap.tableexport.v7;
 
 import java.util.Arrays;
 import java.util.LinkedList;
