@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.vaadin.addon.tableexport;
+package com.infraleap.tableexport;
 
 import static org.junit.Assert.assertEquals;
 

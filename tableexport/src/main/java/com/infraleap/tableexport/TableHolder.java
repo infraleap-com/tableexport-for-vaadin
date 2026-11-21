@@ -1,4 +1,4 @@
-package com.vaadin.addon.tableexport;
+package com.infraleap.tableexport;
 
 import java.io.Serializable;
 import java.util.Collection;

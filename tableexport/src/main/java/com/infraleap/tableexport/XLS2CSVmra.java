@@ -16,7 +16,7 @@
  * 
  * ====================================================================
  */
-package com.vaadin.addon.tableexport;
+package com.infraleap.tableexport;
 
 import org.apache.poi.hssf.eventusermodel.EventWorkbookBuilder.SheetRecordCollectingListener;
 import org.apache.poi.hssf.eventusermodel.FormatTrackingHSSFListener;

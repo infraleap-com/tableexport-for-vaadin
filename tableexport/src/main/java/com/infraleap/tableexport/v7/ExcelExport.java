@@ -1,10 +1,10 @@
-package com.vaadin.addon.tableexport.v7;
+package com.infraleap.tableexport.v7;
 
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.Workbook;
 
 @Deprecated
-public class ExcelExport extends com.vaadin.addon.tableexport.ExcelExport {
+public class ExcelExport extends com.infraleap.tableexport.ExcelExport {
 
     /**
      * At minimum, we need a Table to export. Everything else has default settings.

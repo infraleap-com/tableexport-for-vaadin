@@ -1,7 +1,7 @@
-package com.vaadin.addon.tableexport.v7;
+package com.infraleap.tableexport.v7;
 
 import com.csvreader.CsvWriter;
-import com.vaadin.addon.tableexport.TableExport;
+import com.infraleap.tableexport.TableExport;
 import com.vaadin.v7.ui.Table;
 import de.catma.util.CloseSafe;
 import de.catma.util.IDGenerator;
