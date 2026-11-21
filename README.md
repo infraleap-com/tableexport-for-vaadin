@@ -7,7 +7,7 @@ Legacy versions of the add-on that worked with Vaadin 7 (< 1.8.0) and Vaadin 6 (
 
 This is the version 1.8.0 that a fork by Rijad Zuzo ([Tebra/tableexport-for-vaadin](https://github.com/Tebra/tableexport-for-vaadin),
 July 2018) built on top of the last release of [jnash67/tableexport-for-vaadin](https://github.com/jnash67/tableexport-for-vaadin),
-published here unchanged under the Maven coordinates `com.infraleap:tableexport-for-vaadin:1.8.0`; the Java package
+published here unchanged under the Maven coordinates `org.vaadin.addons.infraleap:tableexport-for-vaadin:1.8.0`; the Java package
 stays `com.vaadin.addon.tableexport`. Compared to the original it exports the presented value when a column has a
 presentation provider, formats `LocalDate` and `LocalDateTime` cells, aligns cells by their presented value and handles
 `null` cell values and columns without an id.
