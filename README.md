@@ -1,18 +1,44 @@
-# TableExport Add-on for Vaadin 8
+# TableExport Add-on for Vaadin Flow
 
-TableExport is a Data Component add-on for Vaadin 8.
-Legacy versions of the add-on that worked with Vaadin 7 (< 1.8.0) and Vaadin 6 (< 1.3.0) should still be available on the Vaadin.com site.
+TableExport exports a Vaadin Grid or TreeGrid to Excel (`.xls`, Apache POI) or CSV. Version 2.0.0 is for Vaadin Flow
+(Vaadin 25, Java 21); version 1.8.0 (branch `1.8`) is for Vaadin 8.
 
 ## About this fork
 
-This is the version 1.8.0 that a fork by Rijad Zuzo ([Tebra/tableexport-for-vaadin](https://github.com/Tebra/tableexport-for-vaadin),
+Version 1.8.0 is the version that a fork by Rijad Zuzo ([Tebra/tableexport-for-vaadin](https://github.com/Tebra/tableexport-for-vaadin),
 July 2018) built on top of the last release of [jnash67/tableexport-for-vaadin](https://github.com/jnash67/tableexport-for-vaadin),
-published here unchanged under the Maven coordinates `org.vaadin.addons.infraleap:tableexport-for-vaadin:1.8.0`; the Java package
-stays `com.vaadin.addon.tableexport`. Compared to the original it exports the presented value when a column has a
-presentation provider, formats `LocalDate` and `LocalDateTime` cells, aligns cells by their presented value and handles
-`null` cell values and columns without an id.
+published unchanged (Java package `com.vaadin.addon.tableexport`, branch `1.8`, tag `1.8.0`). Version 1.8.1 fixes three
+of its bugs. Version 2.0.0 ports 1.8.0 to Vaadin Flow, its behaviour and bugs included; version 2.0.1 fixes the same
+three bugs. From 1.8.1 on the Java package is `com.infraleap.tableexport`; Maven coordinates
+`org.vaadin.addons.infraleap:tableexport-for-vaadin`.
 
-Version 2.0.0 is a port of this version to Vaadin Flow (branch `master`).
+## Usage (2.0.0)
+
+A Flow column does not give out the value provider it was created with, so the columns to export are made exportable
+with their value provider and what they present; every column needs a key:
+
+```java
+Grid<Person> grid = new Grid<>();
+DefaultGridHolder.addExportableColumn(grid, Person::getName, String.class).setHeader("Name").setKey("name");
+DefaultGridHolder.exportable(grid.addColumn(new NumberRenderer<>(Person::getSalary, "%.2f")), Person::getSalary, Number.class)
+    .setHeader("Salary").setKey("salary");
+
+new ExcelExport(grid, "Persons", "Staff", "persons.xls", true).export();
+```
+
+`export()` writes the file and sends it to the browser as an attachment (a `DownloadHandler` registered in the session,
+removed after the download); `convertTable()` alone builds the workbook (`getWorkbook()`) without sending it.
+
+## Changes from 1.8.0
+
+* Vaadin Flow instead of Vaadin 8; Apache POI 4.1.2 instead of 3.17; Java 21. The Vaadin 7 classes (package `v7`,
+  `Table`, `Container`) and the Vaadin 8 demo are gone; `ExcelExportTest` shows the use.
+* Java package `com.infraleap.tableexport`.
+* `DefaultGridHolder`: columns are read by key and header text; the value of a cell comes from the value provider
+  registered with `DefaultGridHolder.exportable(...)` (Vaadin 8: the column's value provider and, by reflection, its
+  presentation provider).
+* Everything else behaves as in 1.8.0, including its three bugs (cell type is the class of the value provider,
+  totals row fails for grids, `java.util.Date` cells get their text); 2.0.1 fixes them.
 
 ## Overview
 * Exporting data to Excel or CSV formats is a common task that comes up time and again. The solution can figured out from various forum posts but it takes a while to put everything together, especially the writing of the Excel file to the browser.
@@ -21,12 +47,10 @@ Version 2.0.0 is a port of this version to Vaadin Flow (branch `master`).
 * This add-on requires the Apache POI library (http://poi.apache.org/). 
 * This add-on uses Charles Anthony's solution from: http://vaadin.com/forum/-/message_boards/view_message/159583
 
-## Building and running demo
+## Building
 
 * git clone <url of the github repository>
-* mvn clean install
-* cd tableexport-demo
-* mvn jetty:run
+* mvn clean install (the add-on zip for the Vaadin Directory is in `tableexport/target`)
 
 ## License
 
