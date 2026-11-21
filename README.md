@@ -5,14 +5,22 @@ Legacy versions of the add-on that worked with Vaadin 7 (< 1.8.0) and Vaadin 6 (
 
 ## About this fork
 
-This is the version 1.8.0 that a fork by Rijad Zuzo ([Tebra/tableexport-for-vaadin](https://github.com/Tebra/tableexport-for-vaadin),
-July 2018) built on top of the last release of [jnash67/tableexport-for-vaadin](https://github.com/jnash67/tableexport-for-vaadin),
-published here unchanged under the Maven coordinates `org.vaadin.addons.infraleap:tableexport-for-vaadin:1.8.0`; the Java package
-stays `com.vaadin.addon.tableexport`. Compared to the original it exports the presented value when a column has a
-presentation provider, formats `LocalDate` and `LocalDateTime` cells, aligns cells by their presented value and handles
-`null` cell values and columns without an id.
+Version 1.8.0 is the version that a fork by Rijad Zuzo ([Tebra/tableexport-for-vaadin](https://github.com/Tebra/tableexport-for-vaadin),
+July 2018) built on top of the last release of [jnash67/tableexport-for-vaadin](https://github.com/jnash67/tableexport-for-vaadin):
+compared to the original it exports the presented value when a column has a presentation provider, formats
+`LocalDate` and `LocalDateTime` cells, aligns cells by their presented value and handles `null` cell values and
+columns without an id. It is published unchanged (Java package `com.vaadin.addon.tableexport`, tag `1.8.0`).
 
-Version 2.0.0 is a port of this version to Vaadin Flow (branch `master`).
+Version 1.8.1 fixes three bugs of 1.8.0 and moves the add-on to its own Java package:
+
+* The type of a cell is the class of the value it shows (1.8.0: the class of the column's value provider, so numbers
+  were written as text with the default style).
+* The totals row works for grids (1.8.0 ended in a ClassCastException and summed nothing).
+* A `java.util.Date` cell keeps its date (1.8.0 overwrote it with its text).
+* Java package `com.infraleap.tableexport`: users of 1.8.0 change their imports, nothing else.
+
+Maven coordinates: `org.vaadin.addons.infraleap:tableexport-for-vaadin`. Version 2.0.x (branch `2.0`) is the port to
+Vaadin Flow.
 
 ## Overview
 * Exporting data to Excel or CSV formats is a common task that comes up time and again. The solution can figured out from various forum posts but it takes a while to put everything together, especially the writing of the Excel file to the browser.
