@@ -1,11 +1,3 @@
-*.class
-
-.classpath
-.project
-.settings
-target
-.gitignore~
-.DS_Store
-.idea
-out
 *.iml
+release/
+target/
